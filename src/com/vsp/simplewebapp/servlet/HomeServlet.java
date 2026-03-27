@@ -1,4 +1,4 @@
-package com.lanihuang.simplewebapp.servlet;
+package com.vsp.simplewebapp.servlet;
 
 import java.io.IOException;
 

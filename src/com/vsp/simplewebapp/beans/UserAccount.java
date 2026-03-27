@@ -1,4 +1,4 @@
-package com.lanihuang.simplewebapp.beans;
+package com.vsp.simplewebapp.beans;
 
 public class UserAccount {
 

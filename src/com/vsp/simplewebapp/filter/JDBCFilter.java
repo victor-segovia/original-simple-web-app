@@ -1,4 +1,4 @@
-package com.lanihuang.simplewebapp.filter;
+package com.vsp.simplewebapp.filter;
 
 
 import java.io.IOException;
@@ -16,8 +16,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-import com.lanihuang.simplewebapp.conn.ConnectionUtils;
-import com.lanihuang.simplewebapp.utils.MyUtils;
+import com.vsp.simplewebapp.conn.ConnectionUtils;
+import com.vsp.simplewebapp.utils.MyUtils;
 
 @WebFilter(filterName = "jdbcFilter", urlPatterns = { "/*" })
 public class JDBCFilter implements Filter {

@@ -1,4 +1,4 @@
-package com.lanihuang.simplewebapp.filter;
+package com.vsp.simplewebapp.filter;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -14,9 +14,9 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import com.lanihuang.simplewebapp.beans.UserAccount;
-import com.lanihuang.simplewebapp.utils.DBUtils;
-import com.lanihuang.simplewebapp.utils.MyUtils;
+import com.vsp.simplewebapp.beans.UserAccount;
+import com.vsp.simplewebapp.utils.DBUtils;
+import com.vsp.simplewebapp.utils.MyUtils;
 
 @WebFilter(filterName = "cookieFilter", urlPatterns = { "/*" })
 public class CookieFilter implements Filter {

@@ -1,7 +1,9 @@
-package com.lanihuang.simplewebapp.conn;
+package com.vsp.simplewebapp.conn;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+
+import com.vsp.simplewebapp.conn.MySQLConnUtils;
 
 public class ConnectionUtils {
 

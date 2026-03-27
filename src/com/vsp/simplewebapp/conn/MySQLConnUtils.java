@@ -1,4 +1,4 @@
-package com.lanihuang.simplewebapp.conn;
+package com.vsp.simplewebapp.conn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,10 +10,10 @@ public class MySQLConnUtils {
   throws ClassNotFoundException, SQLException {
 
     // Note: Change the connection parameters accordingly.
-    String hostName = "us-cdbr-iron-east-04.cleardb.net";
-    String dbName = "heroku_2c893dd9e4fdf5d";
-    String userName = "bc7a403442c80e";
-    String password = "d85f72d1";
+    String hostName = "localhost:3306";
+    String dbName = "simplewebapp_db";
+    String userName = "simplewebapp_db_user";
+    String password = "StG4412288!1";
     return getMySQLConnection(hostName, dbName, userName, password);
   }
 

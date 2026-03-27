@@ -1,4 +1,4 @@
-package com.lanihuang.simplewebapp.utils;
+package com.vsp.simplewebapp.utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.lanihuang.simplewebapp.beans.Product;
-import com.lanihuang.simplewebapp.beans.UserAccount;
+import com.vsp.simplewebapp.beans.Product;
+import com.vsp.simplewebapp.beans.UserAccount;
 
 public class DBUtils {
 

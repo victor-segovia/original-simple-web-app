@@ -1,4 +1,4 @@
-package com.lanihuang.simplewebapp.servlet;
+package com.vsp.simplewebapp.servlet;
 
 import java.io.IOException;
 
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.lanihuang.simplewebapp.beans.UserAccount;
-import com.lanihuang.simplewebapp.utils.MyUtils;
+import com.vsp.simplewebapp.beans.UserAccount;
+import com.vsp.simplewebapp.utils.MyUtils;
 
 @WebServlet(urlPatterns = { "/userInfo" })
 public class UserInfoServlet extends HttpServlet {

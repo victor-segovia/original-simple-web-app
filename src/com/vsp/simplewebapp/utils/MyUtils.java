@@ -1,4 +1,4 @@
-package com.lanihuang.simplewebapp.utils;
+package com.vsp.simplewebapp.utils;
 
 import java.sql.Connection;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.lanihuang.simplewebapp.beans.UserAccount;
+import com.vsp.simplewebapp.beans.UserAccount;
 
 public class MyUtils {
 

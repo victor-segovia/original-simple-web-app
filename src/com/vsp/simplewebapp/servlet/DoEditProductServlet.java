@@ -1,4 +1,4 @@
-package com.lanihuang.simplewebapp.servlet;
+package com.vsp.simplewebapp.servlet;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lanihuang.simplewebapp.beans.Product;
-import com.lanihuang.simplewebapp.utils.DBUtils;
-import com.lanihuang.simplewebapp.utils.MyUtils;
+import com.vsp.simplewebapp.beans.Product;
+import com.vsp.simplewebapp.utils.DBUtils;
+import com.vsp.simplewebapp.utils.MyUtils;
 
 @WebServlet(urlPatterns = { "/doEditProduct" })
 public class DoEditProductServlet extends HttpServlet {

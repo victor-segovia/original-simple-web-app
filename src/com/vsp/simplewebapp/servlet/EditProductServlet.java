@@ -1,9 +1,8 @@
-package com.lanihuang.simplewebapp.servlet;
+package com.vsp.simplewebapp.servlet;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,15 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lanihuang.simplewebapp.beans.Product;
-import com.lanihuang.simplewebapp.utils.DBUtils;
-import com.lanihuang.simplewebapp.utils.MyUtils;
+import com.vsp.simplewebapp.beans.Product;
+import com.vsp.simplewebapp.utils.DBUtils;
+import com.vsp.simplewebapp.utils.MyUtils;
 
-@WebServlet(urlPatterns = { "/productList" })
-public class ProductListServlet extends HttpServlet {
+@WebServlet(urlPatterns = { "/editProduct" })
+public class EditProductServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
-  public ProductListServlet() {
+  public EditProductServlet() {
     super();
   }
 
@@ -29,24 +28,36 @@ public class ProductListServlet extends HttpServlet {
   throws ServletException, IOException {
     Connection conn = MyUtils.getStoredConnection(request);
 
+    String code = (String) request.getParameter("code");
+
+    Product product = null;
+
     String errorString = null;
-    List<Product> list = null;
+
     try {
-      list = DBUtils.queryProduct(conn);
+      product = DBUtils.findProduct(conn, code);
     } catch (SQLException e) {
       e.printStackTrace();
       errorString = e.getMessage();
     }
 
-    // Store info in request attribute, before forward to views
+
+    // If no error.
+    // The product does not exist to edit.
+    // Redirect to productList page.
+    if (errorString != null && product == null) {
+      response.sendRedirect(request.getServletPath() + "/productList");
+      return;
+    }
+
+    // Store errorString in request attribute, before forward to views.
     request.setAttribute("errorString", errorString);
-    request.setAttribute("productList", list);
+    request.setAttribute("product", product);
 
-
-    // Forward to /WEB-INF/views/productListView.jsp
     RequestDispatcher dispatcher = request.getServletContext()
-                                   .getRequestDispatcher("/WEB-INF/views/productListView.jsp");
+                                   .getRequestDispatcher("/WEB-INF/views/editProductView.jsp");
     dispatcher.forward(request, response);
+
   }
 
   @Override
